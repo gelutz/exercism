@@ -1,13 +1,33 @@
+// Given a string representing a matrix of numbers, return the rows and columns of
+// that matrix.
+
 export class Matrix {
-  constructor() {
-    throw new Error('Remove this statement and implement this function')
+  // não faço ideia do que está fazendo
+  // github copilot fez tudo
+  constructor(public matrix: string) {
+    this.matrix = matrix;
   }
 
-  get rows(): unknown {
-    throw new Error('Remove this statement and implement this function')
+  public get rows() {
+    return this.getRows();
   }
 
-  get columns(): unknown {
-    throw new Error('Remove this statement and implement this function')
+  public get columns() {
+    return this.getColumns();
+  }
+
+  // Returns array with rows in the matrix
+  public getRows() {
+    return this.matrix.split('\n').map(row => row.split(' ').map(Number));
+  }
+
+  // Returns array with columns array
+  public getColumns() {
+    const columns = [];
+    for (let i = 0; i < this.rows[0].length; i++) {
+      const column = this.rows.map(row => row[i]);
+      columns.push(column);
+    }
+    return columns;
   }
 }
