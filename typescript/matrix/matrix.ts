@@ -8,21 +8,22 @@ export class Matrix {
     this.matrix = matrix;
   }
 
-  public get rows() {
+  public get rows(): number[][] {
     return this.getRows();
   }
 
-  public get columns() {
+  public get columns(): number[][] {
     return this.getColumns();
   }
 
   // Returns array with rows in the matrix
-  public getRows() {
+  public getRows(): number[][] {
     return this.matrix.split('\n').map(row => row.split(' ').map(Number));
   }
+  
 
   // Returns array with columns array
-  public getColumns() {
+  public getColumns(): number[][] {
     const columns = [];
     for (let i = 0; i < this.rows[0].length; i++) {
       const column = this.rows.map(row => row[i]);
