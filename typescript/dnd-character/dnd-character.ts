@@ -21,7 +21,7 @@ export class DnDCharacter {
 		this.wisdom = DnDCharacter.generateAbilityScore()
 		this.charisma = DnDCharacter.generateAbilityScore()
 
-		this.hitpoints = DnDCharacter.getModifierFor(this.constitution)
+		this.hitpoints = 10 + DnDCharacter.getModifierFor(this.constitution)
 	}
 
 	public static generateAbilityScore(): number {
@@ -35,6 +35,7 @@ export class DnDCharacter {
 	}
 
 	public static getModifierFor(abilityValue: number): number {
+
 		return Math.floor((abilityValue - 10) / 2)
 	}
 }
